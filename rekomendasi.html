@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAVORA - Rekomendasi</title>
+  
+  <!-- Font Google Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #6b4c3e;
+      color: #ffffff;
+    }
+
+    /* Header Navigasi Utama */
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 10px 40px 0 40px;
+    }
+
+    /* Group Kiri: Logo S & Panah */
+    .left-header-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+
+    .logo-box {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .logo-img {
+      height: 140px !important;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Tombol Panah Kembali Langsung Ke Kategori */
+    .btn-back {
+      width: 42px;
+      height: 42px;
+      background-color: #3e2723;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
+      margin-top: -20px;
+      margin-left: 50px !important;
+      cursor: pointer;
+    }
+
+    .btn-back:hover {
+      transform: scale(1.08);
+    }
+
+    /* Navigasi Kanan */
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .nav-item {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 6px 18px;
+      border-radius: 20px;
+    }
+
+    .nav-item.active {
+      background-color: #3e2723;
+    }
+
+    /* Layout Konten Utama */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: -15px;
+      width: 100%;
+    }
+
+    /* Judul REKOMENDASI */
+    .category-header-title {
+      background-color: #3e2723;
+      padding: 10px 50px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .category-header-title h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* AREA KHUSUS KARTU YANG BISA DIGESER */
+    .cards-slider-wrapper {
+      width: 90%;
+      max-width: 1050px;
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      padding: 10px 15px 25px 15px;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+    }
+
+    .cards-slider-wrapper::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .cards-slider-wrapper::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+    }
+
+    .cards-slider-wrapper::-webkit-scrollbar-thumb {
+      background: #3e2723;
+      border-radius: 10px;
+    }
+
+    /* Kartu Kubah */
+    .arch-card {
+      background-color: #fcebd9;
+      border-radius: 130px 130px 0 0;
+      padding: 25px 20px 0 20px;
+      width: 310px;
+      height: 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      flex-shrink: 0;
+      scroll-snap-align: center;
+    }
+
+    .circle-photo {
+      width: 155px;
+      height: 155px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-top: 5px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      background-color: #3e2723;
+      flex-shrink: 0;
+    }
+
+    .circle-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .place-title {
+      font-size: 1rem;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #3e2723;
+    }
+
+    .bottom-badge {
+      position: absolute;
+      bottom: 15px;
+      background-color: #3e2723;
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.62rem;
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 88%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .map-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Navigasi -->
+  <header class="header-container">
+    
+    <!-- Group Logo S & Tombol Back -->
+    <div class="left-header-group">
+      <div class="logo-box">
+        <img src="logo.png" alt="SAVORA Logo" class="logo-img">
+      </div>
+      <!-- Di sini targetnya kategori.html -->
+      <a href="kategori.html" onclick="window.location.href='kategori.html'; return false;" class="btn-back">
+        <span>&larr;</span>
+      </a>
+    </div>
+
+    <!-- Navigasi Kanan -->
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">Beranda</a>
+      <a href="kategori.html" class="nav-item">Kategori</a>
+      <a href="rekomendasi.html" class="nav-item active">Rekomendasi</a>
+    </nav>
+  </header>
+
+  <!-- Konten Utama -->
+  <main class="main-content">
+    
+    <div class="category-header-title">
+      <h1>REKOMENDASI</h1>
+    </div>
+
+    <div class="cards-slider-wrapper">
+      
+      <!-- 1. LA LUNA -->
+      <div class="arch-card">
+        <div class="circle-photo">
+          <img src="laluna.jpg" alt="La Luna Coffee">
+        </div>
+        <h2 class="place-title">LA LUNA<br>COFFEE & EATERY</h2>
+        
+        <div class="bottom-badge">
+          <img class="map-icon" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg" alt="Pin">
+          <span>Jl. Ir. Sutami No.64, Jebres, Kec. Jebres, Kota Surakarta, Jawa Tengah 57125</span>
+        </div>
+      </div>
+
+      <!-- 2. MADJA -->
+      <div class="arch-card">
+        <div class="circle-photo">
+          <img src="madja.jpg" alt="Madja Eat & Coffee">
+        </div>
+        <h2 class="place-title">MADJA EAT & COFFE</h2>
+        
+        <div class="bottom-badge">
+          <img class="map-icon" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg" alt="Pin">
+          <span>Jl. Dewi Sartika No.33, Tegalklaten, Klaten, Kec. Klaten Tengah, Kabupaten Klaten, Jawa Tengah 57411</span>
+        </div>
+      </div>
+
+      <!-- 3. ANALEKTA -->
+      <div class="arch-card">
+        <div class="circle-photo">
+          <img src="analekta.jpg" alt="Analekta">
+        </div>
+        <h2 class="place-title">ANALEKTA</h2>
+        
+        <div class="bottom-badge">
+          <img class="map-icon" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg" alt="Pin">
+          <span>Dusun 2, Karanggeneng, Kec. Boyolali, Kabupaten Boyolali, Jawa Tengah 57312</span>
+        </div>
+      </div> 
+
+      <div class="arch-card">
+        <div class="circle-photo">
+          <img src="kamala.jpg" alt="Nama Tempat">
+        </div>
+        <h2 class="place-title">KAMALA BAKE HOUSE</h2>
+        
+        <div class="bottom-badge">
+          <img class="map-icon" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg" alt="Pin">
+          <span>Jl. Delanggu-Polanharjo, Krecek, Kec. Delanggu, Kabupaten Klaten, Jawa Tengah 57471</span>
+        </div>
+      </div>
+
+      <div class="arch-card">
+        <div class="circle-photo">
+          <img src="zabunch.jpg" alt="Nama Tempat">
+        </div>
+        <h2 class="place-title">ZABUNCH</h2>
+        
+        <div class="bottom-badge">
+          <img class="map-icon" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg" alt="Pin">
+          <span>Jl. Prawirotaman No.49, Brontokusuman, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55153</span>
+        </div>
+      </div>
+
+      <div class="arch-card">
+        <div class="circle-photo">
+          <img src="misoa.jpg" alt="Nama Tempat">
+        </div>
+        <h2 class="place-title">KEDAI MISOA 99</h2>
+      
+        <div class="bottom-badge">
+          <img class="map-icon" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg" alt="Pin">
+          <span>Jl. Sutowijoyo No.1, Penumping, Kec. Laweyan, Kota Surakarta, Jawa Tengah 57141</span>
+        </div>
+      </div>
+
+      <div class="arch-card">
+        <div class="circle-photo">
+          <img src="artomoro.jpg" alt="Nama Tempat">
+        </div>
+        <h2 class="place-title">AYAM BAKAR ARTOMORO</h2>
+        
+        <div class="bottom-badge">
+          <img class="map-icon" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg" alt="Pin">
+          <span>Jl. Mayor Kusmanto No.13, Tegaltalang, Semangkak, Kec. Klaten Tengah, Kabupaten Klaten, Jawa Tengah 57415</span>
+        </div>
+      </div>
+
+      <div class="arch-card">
+        <div class="circle-photo">
+          <img src="rakku.jpg" alt="Nama Tempat">
+        </div>
+        <h2 class="place-title">RAKKU CAFFEE</h2>
+        
+        <div class="bottom-badge">
+          <img class="map-icon" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg" alt="Pin">
+          <span>Jl. F.M. Noto No.17, Kotabaru, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55224</span>
+        </div>
+      </div>
+
+      <div class="arch-card">
+        <div class="circle-photo">
+          <img src="dapurbaru.jpg" alt="Nama Tempat">
+        </div>
+        <h2 class="place-title">DAPOER BARU</h2>
+        
+        <div class="bottom-badge">
+          <img class="map-icon" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg" alt="Pin">
+          <span>Jl. Gatot Subroto, Kemlayan, Kec. Serengan, Kota Surakarta, Jawa Tengah 57151</span>
+        </div>
+      </div>
+
+      <div class="arch-card">
+        <div class="circle-photo">
+          <img src="lesungpipi.jpg" alt="Nama Tempat">
+        </div>
+        <h2 class="place-title">LESUNG PIPI</h2>
+        
+        <div class="bottom-badge">
+          <img class="map-icon" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282015-2020%29.svg" alt="Pin">
+          <span>Jl. Dr. Cipto Mangunkusumo No.3, Sriwedari, Kec. Laweyan, Kota Surakarta, Jawa Tengah 57141</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

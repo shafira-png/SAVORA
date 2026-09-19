@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAVORA - Kategori</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style-kategori.css">
+</head>
+<body>
+
+  <div class="page-background">
+    <div class="bg-overlay"></div>
+
+    <header class="header-container">
+      <div class="logo-box">
+        <img src="logo.png" alt="SAVORA Logo" class="logo-img">
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-item active">Beranda</a>
+        <a href="kategori.html" class="nav-item">Kategori</a>
+        <a href="rekomendasi.html" class="nav-item">Rekomendasi</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <h1 class="script-title">Dimana Ruang & Rasa Bertemu</h1>
+
+      <div class="search-container">
+        <span class="search-icon">&#128065;</span>
+        <input type="text" id="searchInput" placeholder="" class="search-input">
+      </div>
+
+      <div class="card-grid" id="cardGrid">
+
+        <a href="cozy.html" class="card-link">
+          <div class="category-card">
+      <div class="card-header">
+        <h2>COZY</h2>
+      </div>
+      <div class="card-body">
+        <div class="photo-stack">
+          <img src="gettsee.jpg" class="img-1">
+          <img src="argoloro.jpg" class="img-2">
+          <img src="margi.jpg" class="img-3">
+          <img src="lesungpipi.jpg" class="img-4">
+          <img src="analekta.jpg" class="img-5">
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- 2. KARTU KULINER LEGENDARIS (Pindah ke legendaris.html) -->
+  <a href="legendaris.html" class="card-link">
+    <div class="category-card">
+      <div class="card-header">
+        <h2>KULINER LEGENDARIS</h2>
+      </div>
+      <div class="card-body">
+        <div class="photo-stack">
+          <img src="pakpono.jpg" class="img-1">
+          <img src="pakpur.jpg" class="img-2">
+          <img src="tendabiru.jpg" class="img-3">
+          <img src="thehouse.jpg" class="img-4">
+          <img src="kandangingkung.jpg" class="img-5">
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- 3. KARTU HIDDEN GEM (Pindah ke hidden-gem.html) -->
+  <a href="hidden-gem.html" class="card-link">
+    <div class="category-card">
+      <div class="card-header">
+        <h2>HIDDEN GEM</h2>
+      </div>
+      <div class="card-body">
+        <div class="photo-stack">
+          <img src="selosa.jpg" class="img-1">
+          <img src="esdawet.jpg" class="img-2">
+          <img src="1956.jpg" class="img-3">
+          <img src="warungmelawan.jpg" class="img-4">
+          <img src="wedangan.jpg" class="img-5">
+        </div>
+      </div>
+    </div>
+  </a>
+
+</div>
+       
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.category-card');
+
+    searchInput.addEventListener('keyup', function () {
+      const filterText = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const title = card.querySelector('h2').textContent.toLowerCase();
+        card.style.display = title.includes(filterText) ? 'block' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

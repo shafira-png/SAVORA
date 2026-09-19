@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAVORA - Kuliner Legendaris</title>
+  
+  <!-- Font Google Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Hubungkan ke file CSS terpisah -->
+  <link rel="stylesheet" href="style-legendaris.css">
+</head>
+<body>
+
+  <!-- Header Navigasi -->
+  <header class="header-container">
+    
+    <!-- Group Logo & Tombol Back Bertumpuk -->
+    <div class="left-header-group">
+      <div class="logo-box">
+        <img src="logo.png" alt="SAVORA Logo" class="logo-img">
+      </div>
+      <a href="kategori.html" class="btn-back">
+        <span>&larr;</span>
+      </a>
+    </div>
+
+    <!-- Navigasi Kanan -->
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">Beranda</a>
+      <a href="kategori.html" class="nav-item active">Kategori</a>
+      <a href="rekomendasi.html" class="nav-item">Rekomendasi</a>
+    </nav>
+  </header>
+
+  <!-- Konten Utama -->
+  <main class="main-content">
+    
+    <!-- Judul Kategori -->
+    <div class="category-header-title">
+      <h1>KULINER LEGENDARIS</h1>
+    </div>
+
+    <!-- Banner Tengah & Kartu Tempat -->
+    <div class="banner-wrapper">
+      <div class="banner-bg"></div>
+
+      <div class="place-cards-grid">
+        
+        <!-- 1. KARTU PAK PONO -->
+        <a href="pakpono.html" class="place-card-link">
+          <div class="place-card">
+            <div class="store-icon-box">
+              <span class="store-icon">&#127978;</span>
+            </div>
+            <div class="circle-frame">
+              <img src="pakpono.jpg" alt="Ayam & Bebek Goreng Pak Pono">
+            </div>
+            <h2 class="place-title">AYAM & BEBEK GORENG PAK PONO</h2>
+          </div>
+        </a>
+
+        <!-- 2. KARTU PAK PUR -->
+        <a href="pakpur.html" class="place-card-link">
+          <div class="place-card">
+            <div class="store-icon-box">
+              <span class="store-icon">&#127978;</span>
+            </div>
+            <div class="circle-frame">
+              <img src="pakpur.jpg" alt="Sate Kambing Pak Pur">
+            </div>
+            <h2 class="place-title">SATE KAMBING PAK PUR</h2>
+          </div>
+        </a>
+
+        <!-- 3. KARTU TENDA BIRU -->
+        <a href="tendabiru.html" class="place-card-link">
+          <div class="place-card">
+            <div class="store-icon-box">
+              <span class="store-icon">&#127978;</span>
+            </div>
+            <div class="circle-frame">
+              <img src="tendabiru.jpg" alt="Selat Solo Tenda Biru">
+            </div>
+            <h2 class="place-title">SELAT SOLO "TENDA BIRU"</h2>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
