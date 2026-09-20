@@ -228,3 +228,14 @@ html, body {
   left: 0;
   color: #ffffff;
 }
+
+@media screen and (max-width: 768px) {
+  .detail-container, .content-wrapper {
+    flex-direction: column !important;
+    padding: 15px !important;
+  }
+  .detail-image img, img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}

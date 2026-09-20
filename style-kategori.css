@@ -185,3 +185,10 @@ body {
   color: #ffffff;
   text-decoration: none;
 }
+
+@media screen and (max-width: 768px) {
+  .category-container, .grid-container {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}
