@@ -229,13 +229,28 @@ html, body {
   color: #ffffff;
 }
 
+/* ==========================================
+   PERBAIKAN TAMPILAN HP - HALAMAN DETAIL CAFE/KULINER
+   ========================================== */
 @media screen and (max-width: 768px) {
-  .detail-container, .content-wrapper {
+  .detail-container, .content-container {
+    display: flex !important;
     flex-direction: column !important;
-    padding: 15px !important;
+    align-items: center !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding: 10px !important;
   }
-  .detail-image img, img {
-    max-width: 100% !important;
+
+  .detail-image, .detail-info {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .detail-image img {
+    width: 100% !important;
+    max-width: 300px !important;
     height: auto !important;
+    border-radius: 12px !important;
   }
 }

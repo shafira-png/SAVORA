@@ -115,31 +115,63 @@ body, html {
 }
 
 /* Perbaikan Tampilan HP untuk Index/Beranda */
+/* ==========================================
+   PERBAIKAN TAMPILAN HP - HALAMAN BERANDA
+   ========================================== */
 @media screen and (max-width: 768px) {
-  /* Mencegah halaman bisa digeser ke samping */
+  /* Mencegah layar goyang / bisa digeser ke samping */
   html, body {
     overflow-x: hidden;
     width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
-  /* Rapikan Navigasi Atas */
-  nav, .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 15px !important;
+  /* Logo atas */
+  header {
+    padding: 15px 0 !important;
+  }
+  
+  header img {
+    max-width: 50px !important;
+    height: auto !important;
   }
 
-  .nav-links {
-    gap: 10px !important;
-  }
-
-  /* Kode lama kamu (dipertahankan): */
-  .hero-title, h1 {
+  /* Judul SAVORA */
+  h1 {
     font-size: 2.2rem !important;
-    letter-spacing: 2px !important;
+    letter-spacing: 3px !important;
+    text-align: center;
+    margin: 15px 0 10px 0 !important;
   }
 
-  .sub-title, .tagline {
-    font-size: 0.8rem !important;
+  /* Container Tagline (Garis - Teks - Garis) */
+  section div div {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 90% !important;
+    margin: 0 auto 20px auto !important;
+  }
+
+  /* Teks Tagline "DI MANA RUANG & RASA BERTEMU" */
+  p {
+    font-size: 0.75rem !important;
+    letter-spacing: 1px !important;
+    text-align: center;
+  }
+
+  /* Garis dekorasi kiri & kanan tagline */
+  span {
+    width: 20px !important;
+    height: 1px !important;
+  }
+
+  /* Tombol Click Here */
+  a[href="kategori.html"] {
+    display: inline-block !important;
+    padding: 8px 22px !important;
+    font-size: 0.85rem !important;
   }
 }
