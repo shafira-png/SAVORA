@@ -186,9 +186,27 @@ body {
   text-decoration: none;
 }
 
+/* Perbaikan Tampilan HP untuk Halaman Rekomendasi */
 @media screen and (max-width: 768px) {
-  .category-container, .grid-container {
-    flex-direction: column !important;
-    align-items: center !important;
+  /* Posisikan tombol kembali dengan rapi */
+  .back-button {
+    position: relative !important;
+    top: 0 !important;
+    left: 15px !important;
+    margin-bottom: 10px;
+  }
+
+  /* Banner REKOMENDASI */
+  .page-title, .recommendation-header {
+    width: 85% !important;
+    margin: 10px auto !important;
+    font-size: 1.3rem !important;
+  }
+
+  /* Kartu Rekomendasi (seperti Zabunch) */
+  .recommend-card, .arch-card {
+    width: 88% !important;
+    max-width: 320px !important;
+    margin: 20px auto !important;
   }
 }

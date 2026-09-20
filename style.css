@@ -114,11 +114,31 @@ body, html {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-@media  screen and (max-width: 768px) {
+/* Perbaikan Tampilan HP untuk Index/Beranda */
+@media screen and (max-width: 768px) {
+  /* Mencegah halaman bisa digeser ke samping */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Rapikan Navigasi Atas */
+  nav, .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px !important;
+  }
+
+  .nav-links {
+    gap: 10px !important;
+  }
+
+  /* Kode lama kamu (dipertahankan): */
   .hero-title, h1 {
     font-size: 2.2rem !important;
     letter-spacing: 2px !important;
   }
+
   .sub-title, .tagline {
     font-size: 0.8rem !important;
   }

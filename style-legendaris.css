@@ -194,10 +194,40 @@ body {
   flex-shrink: 0;
 }
 
+/* Perbaikan Tampilan HP untuk Halaman Kategori (Cozy, Legendaris, dll) */
 @media screen and (max-width: 768px) {
-  .arch-card, .card {
-    width: 85vw !important;
-    max-width: 320px !important;
+  /* Tata letak header/top bar */
+  .header, .top-bar {
+    position: relative;
+    padding: 10px 15px !important;
+  }
+
+  /* Pindahkan tombol back agar tidak bertabrakan dengan banner */
+  .back-btn, .btn-back {
+    position: static !important;
+    margin: 10px 0 10px 15px !important;
+    display: inline-block;
+  }
+
+  /* Banner Judul COZY / LEGENDARIS */
+  .category-banner, .banner-title {
+    width: 90% !important;
     margin: 10px auto !important;
+    font-size: 1.4rem !important;
+    text-align: center;
+  }
+
+  /* Kartu Tempat/Cafe */
+  .cards-container {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .arch-card, .card {
+    width: 85% !important;
+    max-width: 300px !important;
+    margin: 15px auto !important;
   }
 }
