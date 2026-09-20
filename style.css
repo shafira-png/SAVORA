@@ -114,55 +114,52 @@ body, html {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Perbaikan Tampilan HP untuk Index/Beranda */
 /* ==========================================
-   PERBAIKAN TAMPILAN HP - HALAMAN BERANDA
+   RESPONSIF MOBILE (TANPA MENGUBAH DESAIN ASLI)
    ========================================== */
 @media screen and (max-width: 768px) {
-  /* Mencegah layar goyang / bisa digeser ke samping */
+  /* Mencegah layar HP bisa digeser ke samping (mencegah overflow) */
   html, body {
-    overflow-x: hidden;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* Logo atas */
+  /* Menyesuaikan jarak logo atas */
   header {
-    padding: 15px 0 !important;
+    padding: 20px 0 10px 0 !important;
   }
-  
+
   header img {
-    max-width: 50px !important;
+    max-width: 55px !important;
     height: auto !important;
   }
 
-  /* Judul SAVORA */
+  /* Memperkecil proporsi judul SAVORA agar muat dalam 1 baris layar HP */
   h1 {
     font-size: 2.2rem !important;
-    letter-spacing: 3px !important;
-    text-align: center;
+    letter-spacing: 4px !important;
+    text-align: center !important;
     margin: 15px 0 10px 0 !important;
   }
 
-  /* Container Tagline (Garis - Teks - Garis) */
+  /* Tagline "DI MANA RUANG & RASA BERTEMU" */
   section div div {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
     width: 90% !important;
-    margin: 0 auto 20px auto !important;
+    margin: 0 auto 25px auto !important;
   }
 
-  /* Teks Tagline "DI MANA RUANG & RASA BERTEMU" */
   p {
     font-size: 0.75rem !important;
     letter-spacing: 1px !important;
-    text-align: center;
+    white-space: nowrap !important;
   }
 
-  /* Garis dekorasi kiri & kanan tagline */
   span {
     width: 20px !important;
     height: 1px !important;
@@ -170,8 +167,63 @@ body, html {
 
   /* Tombol Click Here */
   a[href="kategori.html"] {
-    display: inline-block !important;
-    padding: 8px 22px !important;
+    padding: 8px 24px !important;
+    font-size: 0.85rem !important;
+  }
+}/* ==========================================
+   RESPONSIF MOBILE (TANPA MENGUBAH DESAIN ASLI)
+   ========================================== */
+@media screen and (max-width: 768px) {
+  /* Mencegah layar HP bisa digeser ke samping (mencegah overflow) */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Menyesuaikan jarak logo atas */
+  header {
+    padding: 20px 0 10px 0 !important;
+  }
+
+  header img {
+    max-width: 55px !important;
+    height: auto !important;
+  }
+
+  /* Memperkecil proporsi judul SAVORA agar muat dalam 1 baris layar HP */
+  h1 {
+    font-size: 2.2rem !important;
+    letter-spacing: 4px !important;
+    text-align: center !important;
+    margin: 15px 0 10px 0 !important;
+  }
+
+  /* Tagline "DI MANA RUANG & RASA BERTEMU" */
+  section div div {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 90% !important;
+    margin: 0 auto 25px auto !important;
+  }
+
+  p {
+    font-size: 0.75rem !important;
+    letter-spacing: 1px !important;
+    white-space: nowrap !important;
+  }
+
+  span {
+    width: 20px !important;
+    height: 1px !important;
+  }
+
+  /* Tombol Click Here */
+  a[href="kategori.html"] {
+    padding: 8px 24px !important;
     font-size: 0.85rem !important;
   }
 }

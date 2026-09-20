@@ -194,40 +194,32 @@ body {
   flex-shrink: 0;
 }
 
-/* Perbaikan Tampilan HP untuk Halaman Kategori (Cozy, Legendaris, dll) */
+/* ==========================================
+   RESPONSIF MOBILE - SUB KATEGORI (COZY, LEGENDARIS, DLL)
+   ========================================== */
 @media screen and (max-width: 768px) {
-  /* Tata letak header/top bar */
-  .header, .top-bar {
-    position: relative;
-    padding: 10px 15px !important;
-  }
-
-  /* Pindahkan tombol back agar tidak bertabrakan dengan banner */
-  .back-btn, .btn-back {
-    position: static !important;
-    margin: 10px 0 10px 15px !important;
-    display: inline-block;
-  }
-
-  /* Banner Judul COZY / LEGENDARIS */
-  .category-banner, .banner-title {
-    width: 90% !important;
+  /* Banner COZY / LEGENDARIS / HIDDEN GEM */
+  .banner, .sub-banner, h2 {
+    width: 85% !important;
+    max-width: 300px !important;
     margin: 10px auto !important;
-    font-size: 1.4rem !important;
-    text-align: center;
+    font-size: 1.3rem !important;
+    text-align: center !important;
   }
 
-  /* Kartu Tempat/Cafe */
-  .cards-container {
-    display: flex;
+  /* Grid/Slider Kartu Cafe */
+  .cards-slider-wrapper, .cards-grid {
+    display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    gap: 20px !important;
     width: 100% !important;
   }
 
-  .arch-card, .card {
+  /* Kartu Cafe individual (Argoloro, Selosa, dll) */
+  .arch-card, .cafe-card {
     width: 85% !important;
     max-width: 300px !important;
-    margin: 15px auto !important;
+    margin: 0 auto !important;
   }
 }

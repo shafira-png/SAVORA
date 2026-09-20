@@ -230,27 +230,27 @@ html, body {
 }
 
 /* ==========================================
-   PERBAIKAN TAMPILAN HP - HALAMAN DETAIL CAFE/KULINER
+   RESPONSIF MOBILE - HALAMAN DETAIL CAFE
    ========================================== */
 @media screen and (max-width: 768px) {
-  .detail-container, .content-container {
+  .detail-container, .content-wrapper {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     width: 90% !important;
-    margin: 0 auto !important;
+    margin: 10px auto !important;
     padding: 10px !important;
-  }
-
-  .detail-image, .detail-info {
-    width: 100% !important;
-    text-align: center !important;
   }
 
   .detail-image img {
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 320px !important;
     height: auto !important;
-    border-radius: 12px !important;
+  }
+
+  .detail-info {
+    width: 100% !important;
+    text-align: center !important;
+    margin-top: 15px !important;
   }
 }

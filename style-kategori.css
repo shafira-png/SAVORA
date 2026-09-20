@@ -186,17 +186,19 @@ body {
   text-decoration: none;
 }
 
-/* Perbaikan Tampilan HP untuk Halaman Rekomendasi */
 /* ==========================================
-   PERBAIKAN TAMPILAN HP - HALAMAN KATEGORI & REKOMENDASI
+   RESPONSIF MOBILE - KATEGORI & REKOMENDASI
    ========================================== */
 @media screen and (max-width: 768px) {
-  /* Navigasi atas (Beranda - Kategori - Rekomendasi) */
+  /* Navigasi Atas (Beranda - Kategori - Rekomendasi) */
   nav, .navbar {
     display: flex !important;
     justify-content: center !important;
-    gap: 10px !important;
-    padding: 10px !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 15px 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   nav a, .navbar a {
@@ -204,44 +206,46 @@ body {
     padding: 6px 12px !important;
   }
 
-  /* Banner Judul Kategori / Rekomendasi */
+  /* Banner Judul KATEGORI / REKOMENDASI */
   .category-banner, .page-title, .recommendation-header {
     width: 85% !important;
     max-width: 320px !important;
     margin: 15px auto !important;
     font-size: 1.2rem !important;
     text-align: center !important;
-    padding: 10px !important;
+    padding: 10px 15px !important;
+    box-sizing: border-box !important;
   }
 
-  /* Tombol Kembali (Panah Back) */
-  .back-button, .btn-back {
+  /* Tombol Panah Kembali (Back) */
+  .back-button, .btn-back, .back-btn {
     position: relative !important;
     top: 0 !important;
-    left: 15px !important;
+    left: 20px !important;
     margin-bottom: 10px !important;
+    display: inline-block !important;
   }
 
-  /* Container Kartu (Membentuk 1 kolom vertikal) */
+  /* Pembungkus Kartu agar tersusun rapi ke bawah */
   .category-container, .cards-container, .cards-wrapper {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     width: 100% !important;
-    padding: 10px !important;
+    padding: 10px 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* Ukuran Kartu Kategori/Tempat */
+  /* Kartu Tempat/Cafe (Menjaga bentuk arch/lengkungan asli) */
   .category-card, .arch-card, .card, .recommend-card {
     width: 88% !important;
-    max-width: 310px !important;
+    max-width: 320px !important;
     margin: 15px auto !important;
     box-sizing: border-box !important;
   }
 
-  /* Gambar di dalam Kartu */
-  .card img, .arch-card img, .category-card img {
+  /* Memastikan gambar di dalam kartu pas dan presisi */
+  .card img, .arch-card img, .category-card img, .recommend-card img {
     width: 100% !important;
     height: auto !important;
     object-fit: cover !important;
