@@ -228,29 +228,3 @@ html, body {
   left: 0;
   color: #ffffff;
 }
-
-/* ==========================================
-   RESPONSIF MOBILE - HALAMAN DETAIL CAFE
-   ========================================== */
-@media screen and (max-width: 768px) {
-  .detail-container, .content-wrapper {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 90% !important;
-    margin: 10px auto !important;
-    padding: 10px !important;
-  }
-
-  .detail-image img {
-    width: 100% !important;
-    max-width: 320px !important;
-    height: auto !important;
-  }
-
-  .detail-info {
-    width: 100% !important;
-    text-align: center !important;
-    margin-top: 15px !important;
-  }
-}

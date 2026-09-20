@@ -193,33 +193,3 @@ body {
   cursor: pointer;
   flex-shrink: 0;
 }
-
-/* ==========================================
-   RESPONSIF MOBILE - SUB KATEGORI (COZY, LEGENDARIS, DLL)
-   ========================================== */
-@media screen and (max-width: 768px) {
-  /* Banner COZY / LEGENDARIS / HIDDEN GEM */
-  .banner, .sub-banner, h2 {
-    width: 85% !important;
-    max-width: 300px !important;
-    margin: 10px auto !important;
-    font-size: 1.3rem !important;
-    text-align: center !important;
-  }
-
-  /* Grid/Slider Kartu Cafe */
-  .cards-slider-wrapper, .cards-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 20px !important;
-    width: 100% !important;
-  }
-
-  /* Kartu Cafe individual (Argoloro, Selosa, dll) */
-  .arch-card, .cafe-card {
-    width: 85% !important;
-    max-width: 300px !important;
-    margin: 0 auto !important;
-  }
-}
