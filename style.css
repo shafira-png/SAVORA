@@ -115,49 +115,61 @@ body, html {
 }
 
 /* ==========================================
-   RESPONSIF MOBILE (TANPA MENGUBAH DESAIN ASLI)
+   RESPONSIF MOBILE FLEKSIBEL (ALL DEVICES)
    ========================================== */
-@media screen and (max-width: 768px) {
-  /* Mencegah layar HP bisa digeser ke samping (mencegah overflow) */
-  html, body {
-    overflow-x: hidden !important;
-    width: 100vw !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
 
-  /* Menyesuaikan jarak logo atas */
+/* 1. Aturan Umum Fleksibel (Simpan di Luar Media Query) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Mencegah geser samping */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 2. Aturan Khusus Layar HP (Hanya aktif jika dibuka di HP) */
+@media screen and (max-width: 768px) {
   header {
-    padding: 20px 0 10px 0 !important;
+    padding: 15px 0 10px 0 !important;
   }
 
   header img {
-    max-width: 55px !important;
+    max-width: 50px !important;
     height: auto !important;
   }
 
-  /* Memperkecil proporsi judul SAVORA agar muat dalam 1 baris layar HP */
+  /* Judul SAVORA fleksibel mengikuti layar HP */
   h1 {
-    font-size: 2.2rem !important;
-    letter-spacing: 4px !important;
+    font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
+    letter-spacing: 3px !important;
     text-align: center !important;
-    margin: 15px 0 10px 0 !important;
+    margin: 10px auto !important;
+    width: 100% !important;
   }
 
-  /* Tagline "DI MANA RUANG & RASA BERTEMU" */
+  /* Tagline */
   section div div {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
     width: 90% !important;
-    margin: 0 auto 25px auto !important;
+    margin: 0 auto 20px auto !important;
   }
 
   p {
-    font-size: 0.75rem !important;
-    letter-spacing: 1px !important;
-    white-space: nowrap !important;
+    font-size: clamp(0.65rem, 2.5vw, 0.85rem) !important;
+    text-align: center !important;
+    white-space: normal !important;
   }
 
   span {
@@ -167,7 +179,7 @@ body, html {
 
   /* Tombol Click Here */
   a[href="kategori.html"] {
-    padding: 8px 24px !important;
+    padding: 8px 22px !important;
     font-size: 0.85rem !important;
   }
 }
