@@ -90,25 +90,5 @@
     </div>
   </a>
 
-</div>
-       
-
-      </div>
-    </main>
-  </div>
-
-  <script>
-    const searchInput = document.getElementById('searchInput');
-    const cards = document.querySelectorAll('.category-card');
-
-    searchInput.addEventListener('keyup', function () {
-      const filterText = searchInput.value.toLowerCase();
-      cards.forEach(card => {
-        const title = card.querySelector('h2').textContent.toLowerCase();
-        card.style.display = title.includes(filterText) ? 'block' : 'none';
-      });
-    });
-  </script>
-
 </body>
 </html>
