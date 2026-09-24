@@ -32,6 +32,7 @@ body, html {
 .hero {
   position: relative;
   height: calc(100vh - 90px);
+  padding: 40px 20px;
   
   /* PENTING: Ganti 'kafe.jpg' dengan nama file gambar kafe yang ada di foldermu */
   background: url('kafe.jpg') center/cover no-repeat;
@@ -60,6 +61,8 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 600px;
 }
 
 /* Brand Title */
@@ -112,4 +115,19 @@ body, html {
   background-color: rgba(255, 255, 255, 1);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto; /* Agar menyesuaikan tinggi layar HP */
+    padding: 60px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px; /* Mengecilkan judul agar muat di HP */
+  }
+
+  .hero-content p {
+    font-size: 14px; /* Mengecilkan teks deskripsi */
+  }
 }
